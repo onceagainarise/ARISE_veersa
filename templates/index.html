@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Data Entry</title>
+</head>
+<body>
+    <h2>Enter Patient Data</h2>
+    <form action="/submit" method="post">
+
+        <!-- NT-proBNP -->
+        <label>NT-proBNP: <input type="text" name="ntprobnp"></label><br>
+        <label>NT-proBNP Flag:
+            <select name="ntprobnp_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Creatinine -->
+        <label>Creatinine: <input type="text" name="creatinine"></label><br>
+        <label>Creatinine Flag:
+            <select name="creatinine_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Urea Nitrogen -->
+        <label>Urea Nitrogen: <input type="text" name="urea_nitrogen"></label><br>
+        <label>Urea Nitrogen Flag:
+            <select name="urea_nitrogen_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Sodium -->
+        <label>Sodium: <input type="text" name="sodium"></label><br>
+        <label>Sodium Flag:
+            <select name="sodium_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Potassium -->
+        <label>Potassium: <input type="text" name="potassium"></label><br>
+        <label>Potassium Flag:
+            <select name="potassium_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Albumin -->
+        <label>Albumin: <input type="text" name="albumin"></label><br>
+        <label>Albumin Flag:
+            <select name="albumin_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- C-Reactive Protein -->
+        <label>C-Reactive Protein: <input type="text" name="c_reactive_protein"></label><br>
+        <label>C-Reactive Protein Flag:
+            <select name="c_reactive_protein_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Hemoglobin -->
+        <label>Hemoglobin: <input type="text" name="hemoglobin"></label><br>
+        <label>Hemoglobin Flag:
+            <select name="hemoglobin_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Hematocrit -->
+        <label>Hematocrit: <input type="text" name="hematocrit"></label><br>
+        <label>Hematocrit Flag:
+            <select name="hematocrit_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Magnesium -->
+        <label>Magnesium: <input type="text" name="magnesium"></label><br>
+        <label>Magnesium Flag:
+            <select name="magnesium_flag">
+                <option value="nan">nan</option>
+                <option value="abnormal">abnormal</option>
+                <option value="delta">delta</option>
+            </select>
+        </label><br>
+
+        <!-- Admission Type -->
+        <label>Admission Type:
+            <select name="admission_type">
+                <option value="ELECTIVE">ELECTIVE</option>
+                <option value="EMERGENCY">EMERGENCY</option>
+                <option value="URGENT">URGENT</option>
+                <option value="NEWBORN">NEWBORN</option>
+            </select>
+        </label><br>
+
+        <!-- Discharge Location -->
+        <label>Discharge Location:
+            <select name="discharge_location">
+                <option value="HOME">HOME</option>
+                <option value="HOME HEALTH CARE">HOME HEALTH CARE</option>
+                <option value="SNF">SNF</option>
+                <option value="SHORT TERM HOSPITAL">SHORT TERM HOSPITAL</option>
+                <option value="REHAB/DISTINCT PART HOSP">REHAB/DISTINCT PART HOSP</option>
+                <option value="OTHER FACILITY">OTHER FACILITY</option>
+            </select>
+        </label><br>
+
+        <!-- Insurance -->
+        <label>Insurance:
+            <select name="insurance">
+                <option value="Private">Private</option>
+                <option value="Self Pay">Self Pay</option>
+                <option value="Medicare">Medicare</option>
+                <option value="Medicaid">Medicaid</option>
+                <option value="Government">Government</option>
+            </select>
+        </label><br>
+
+        <!-- Date/Time -->
+        <label>Admit Time: <input type="text" name="admit_time" placeholder="YYYY-MM-DD HH:MM:SS"></label><br>
+        <label>Discharge Time: <input type="text" name="discharge_time" placeholder="YYYY-MM-DD HH:MM:SS"></label><br>
+
+        <!-- Submit -->
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

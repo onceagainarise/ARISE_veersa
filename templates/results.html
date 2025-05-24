@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { color: #2c3e50; }
+        .result { 
+            padding: 15px; 
+            margin: 10px 0; 
+            border-radius: 5px; 
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .readmission { background-color: #ffcccc; color: #c0392b; }
+        .no-readmission { background-color: #ccffcc; color: #27ae60; }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0;
+        }
+        th, td { 
+            padding: 10px; 
+            text-align: left; 
+            border-bottom: 1px solid #ddd;
+        }
+        th { background-color: #f2f2f2; }
+        .section { margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Prediction Results</h1>
+    
+    <div class="result {% if prediction == 1 %}readmission{% else %}no-readmission{% endif %}">
+        Prediction: {% if prediction == 1 %}High risk of readmission{% else %}Low risk of readmission{% endif %}
+    </div>
+
+    <div class="section">
+        <h2>Patient Information</h2>
+        <table>
+            <tr>
+                <th>Admission Type</th>
+                <td>{{ input_values.admission_type }}</td>
+            </tr>
+            <tr>
+                <th>Discharge Location</th>
+                <td>{{ input_values.discharge_location }}</td>
+            </tr>
+            <tr>
+                <th>Insurance</th>
+                <td>{{ input_values.insurance }}</td>
+            </tr>
+            <tr>
+                <th>Admit Time</th>
+                <td>{{ input_values.admit_time }}</td>
+            </tr>
+            <tr>
+                <th>Discharge Time</th>
+                <td>{{ input_values.discharge_time }}</td>
+            </tr>
+            <tr>
+                <th>Length of Stay (days)</th>
+                <td>{{ input_data.length_of_stay }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Lab Results</h2>
+        <table>
+            <tr>
+                <th>Test</th>
+                <th>Value</th>
+                <th>Flag</th>
+            </tr>
+            <tr>
+                <td>NT-proBNP</td>
+                <td>{{ input_values.ntprobnp }}</td>
+                <td>{{ input_values.ntprobnp_flag }}</td>
+            </tr>
+            <tr>
+                <td>Creatinine</td>
+                <td>{{ input_values.creatinine }}</td>
+                <td>{{ input_values.creatinine_flag }}</td>
+            </tr>
+            <tr>
+                <td>Urea Nitrogen</td>
+                <td>{{ input_values.urea_nitrogen }}</td>
+                <td>{{ input_values.urea_nitrogen_flag }}</td>
+            </tr>
+            <tr>
+                <td>Sodium</td>
+                <td>{{ input_values.sodium }}</td>
+                <td>{{ input_values.sodium_flag }}</td>
+            </tr>
+            <tr>
+                <td>Potassium</td>
+                <td>{{ input_values.potassium }}</td>
+                <td>{{ input_values.potassium_flag }}</td>
+            </tr>
+            <tr>
+                <td>Albumin</td>
+                <td>{{ input_values.albumin }}</td>
+                <td>{{ input_values.albumin_flag }}</td>
+            </tr>
+            <tr>
+                <td>C-Reactive Protein</td>
+                <td>{{ input_values.c_reactive_protein }}</td>
+                <td>{{ input_values.c_reactive_protein_flag }}</td>
+            </tr>
+            <tr>
+                <td>Hemoglobin</td>
+                <td>{{ input_values.hemoglobin }}</td>
+                <td>{{ input_values.hemoglobin_flag }}</td>
+            </tr>
+            <tr>
+                <td>Hematocrit</td>
+                <td>{{ input_values.hematocrit }}</td>
+                <td>{{ input_values.hematocrit_flag }}</td>
+            </tr>
+            <tr>
+                <td>Magnesium</td>
+                <td>{{ input_values.magnesium }}</td>
+                <td>{{ input_values.magnesium_flag }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Derived Features</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Insurance Risk Score</td>
+                <td>{{ input_data.insurance_risk }}</td>
+            </tr>
+            <tr>
+                <td>Admit Weekday</td>
+                <td>{{ input_data.admit_weekday }} (0=Monday, 6=Sunday)</td>
+            </tr>
+            <tr>
+                <td>Emergency Admission</td>
+                <td>{{ input_data.admission_type_EMERGENCY }}</td>
+            </tr>
+            <tr>
+                <td>Urgent Admission</td>
+                <td>{{ input_data.admission_type_URGENT }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="/">Submit another prediction</a>
+</body>
+</html>
